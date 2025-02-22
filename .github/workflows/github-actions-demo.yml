@@ -15,7 +15,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: top system
+      - name: Display runner specifications
         run: |
-          top
+          echo "🖥️ CPU Information:"
+          lscpu
+          echo "🧠 Memory Information:"
+          cat /proc/meminfo | grep MemTotal
+          echo "💾 Disk Information:"
+          df -h /
       - run: echo "🍏 This job's status is ${{ job.status }}"
