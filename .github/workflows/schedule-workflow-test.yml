@@ -1,0 +1,14 @@
+name: Scheduled Workflow
+
+on:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run a script
+        run: echo "scheduled workflow run at $(date)"
