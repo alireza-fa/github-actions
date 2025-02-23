@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-20.04-16core
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,3 +16,11 @@ jobs:
           python-version: '3.12'
           cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
+      - name: Display runner specifications
+        run: |
+          echo "🖥️ CPU Information:"
+          lscpu
+          echo "🧠 Memory Information:"
+          cat /proc/meminfo | grep MemTotal
+          echo "💾 Disk Information:"
+          df -h /
