@@ -36,6 +36,12 @@ jobs:
         import smtplib
         from email.mime.text import MIMEText
 
+        print(f"GITHUB_TOKEN: {os.getenv('GITHUB_TOKEN')}")
+        print(f"GITHUB_REPOSITORY: {os.getenv('GITHUB_REPOSITORY')}")
+        print(f"SMTP_EMAIL: {os.getenv('SMTP_EMAIL')}")
+        print(f"SMTP_PASSWORD: {os.getenv('SMTP_PASSWORD')}")
+        print(f"RECIPIENT_EMAIL: {os.getenv('RECIPIENT_EMAIL')}")
+
         # repository information
         repo = os.getenv('GITHUB_REPOSITORY')
         token = os.getenv('GITHUB_TOKEN')
