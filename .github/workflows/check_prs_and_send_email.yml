@@ -26,6 +26,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
+        python3 <<EOF
         import os
         import requests
         import smtplib
@@ -84,3 +85,4 @@ jobs:
             print("Email sent successfully.")
         except Exception as e:
             print(f"Failed to send email: {e}")
+        EOF
