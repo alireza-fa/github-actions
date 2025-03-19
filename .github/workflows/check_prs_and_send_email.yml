@@ -20,7 +20,7 @@ jobs:
         python-version: '3.12'
 
     - name: Install dependencies
-      run: pip install requests smtplib
+      run: pip install requests && pip install smtplib
 
     - name: Fetch open PRs waiting for review
       env:
